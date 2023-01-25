@@ -36,7 +36,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/blog/[detail]/[review]",
-    "build/types/**/*.ts"
+    "build/types/**/*.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
