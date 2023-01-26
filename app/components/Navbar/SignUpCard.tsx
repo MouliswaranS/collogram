@@ -28,7 +28,7 @@ export default function SignUpCard() {
     }
   }, []);
   return (
-    <div className="">
+    <div className="left-10 sm:ml-0">
       <button
         onClick={() => {
           showBanner();
@@ -39,7 +39,7 @@ export default function SignUpCard() {
       </button>
       <article
         aria-details="accout-card"
-        className=" bg-white bg-gradient-to-tr from-slate-50 to-zinc-50 m-3 w-fit sm:px-16 sm:py-16 flex flex-col items-center shadow-md rounded-xl noblue sm:absolute sm:right-0"
+        className=" bg-white bg-gradient-to-tr from-slate-50 to-zinc-50 m-3 w-fit sm:px-16 sm:py-16 flex flex-col absolute right-0 items-center shadow-md rounded-xl noblue sm:absolute sm:right-0"
         id="account-banner"
       >
         <button

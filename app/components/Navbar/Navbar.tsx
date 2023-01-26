@@ -1,37 +1,60 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Login from "../../login/Login";
 function Navbar() {
+  const [isBanner, SetBanner] = useState(true);
+  const showMenu = () => {
+    if (window.innerWidth < 750) {
+      let dom = document.getElementById("menubar");
+      if (dom && isBanner) {
+        dom.style.animation = "slide-in 0.5s ease-out";
+        dom.style.transition = "0.34s";
+        dom.style.pointerEvents = "auto";
+        dom.style.display = "flex";
+        SetBanner(!isBanner);
+        return;
+      } else if (dom) {
+        dom.style.pointerEvents = "none";
+        dom.style.display = "none";
+        SetBanner(!isBanner);
+        return;
+      }
+    }
+  };
+  useEffect(() => {
+    if (window.innerWidth < 750) {
+      let dom = document.getElementById("menubar");
+      if (dom && isBanner) {
+        dom.style.pointerEvents = "none";
+        dom.style.display = "none";
+      }
+    }
+  }, []);
   return (
-    <div className=" flex justify-between fixed w-full ">
-      <div className="logo">Logo Park</div>
+    <div className=" flex justify-between fixed w-full backgound-theme ">
+      <div className="logo hidden sm:flex">Logo Park</div>
       <div className=" w-7/12">
         <input
           type="text"
           name="search"
           id="SearchBar"
           placeholder="SearchBar"
-          className=" px-5 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500 w-9/12"
+          className=" px-5 h-10 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-blue-500 sm:w-9/12  w-48 ml-16"
         />
       </div>
-      <div className="banner flex w-1/5 justify-between">
-        <button className="themebtn">Dark</button>
-        <button className="Notifications w-8 h-8">
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-            ></path>
-          </svg>
-        </button>
-        <Login />
+      <button
+        onClick={() => showMenu()}
+        className=" sm:hidden absolute w-10 h-10 menuImage m-2"
+        id="menu-background"
+      >
+        
+      </button>
+      <div className="Menu sm:flex w-1/5 justify-between mr-5" id="menubar">
+        <div className="banner flex w-full justify-between flex-col sm:flex-row items-center mt-10 sm:mt-0">
+          <button className="themebtn">Dark</button>
+          <button className="Notifications w-8 h-8">Notif</button>
+          <Login />
+        </div>
       </div>
     </div>
   );

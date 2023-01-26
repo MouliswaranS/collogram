@@ -24,7 +24,22 @@
   -ms-user-select: none;
   user-select: none;
 }
+.line-xender {
+  height: 0.75px;
+}
+.line-reversed-below {
+  transition: 0.5s;
+  transform-origin: 90%;
+  transform: rotateX(45deg);
+}
 
+.menuImage {
+  width: 16px;
+  height: 16px;
+  background: url("../public/assets/menu-open.svg");
+  background-position:center;
+  background-size: cover;
+}
 @keyframes slide-in {
   0% {
     opacity: 0;

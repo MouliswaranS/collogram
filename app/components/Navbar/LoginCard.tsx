@@ -30,7 +30,7 @@ export default function LoginCard({ user }: { user: DefaultSession["user"] }) {
     }
   }, []);
   return (
-    <div className="">
+    <div className=" left-10 sm:ml-0">
       <button
         onClick={() => {
           showBanner();
@@ -41,7 +41,7 @@ export default function LoginCard({ user }: { user: DefaultSession["user"] }) {
       </button>
       <article
         aria-details="accout-card"
-        className=" bg-white bg-gradient-to-tr from-slate-50 to-zinc-50 m-3 w-fit sm:px-7 sm:py-16 p-5 flex flex-col items-center shadow-md rounded-xl noblue sm:absolute sm:right-0"
+        className=" bg-white bg-gradient-to-tr from-slate-50 to-zinc-50 m-3 w-fit sm:px-7 sm:py-16 p-5 flex flex-col absolute right-0 items-center shadow-md rounded-xl noblue sm:absolute sm:right-0"
         id="account-banner"
       >
         {user?.image && (
