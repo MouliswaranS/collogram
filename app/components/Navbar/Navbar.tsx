@@ -46,13 +46,13 @@ function Navbar() {
         onClick={() => showMenu()}
         className=" sm:hidden absolute w-10 h-10 menuImage m-2"
         id="menu-background"
-      >
-        
-      </button>
+      ></button>
       <div className="Menu sm:flex w-1/5 justify-between mr-5" id="menubar">
         <div className="banner flex w-full justify-between flex-col sm:flex-row items-center mt-10 sm:mt-0">
-          <button className="themebtn">Dark</button>
-          <button className="Notifications w-8 h-8">Notif</button>
+          <button className="themebtn px-5 py-2 bg-slate-100 rounded-lg shadow-md">
+            theme
+          </button>
+          <button className="Notifications my-3 px-5 py-2 bg-slate-100 rounded-lg shadow-md hover:translate-x-1 ">Notif</button>
           <Login />
         </div>
       </div>
