@@ -9,6 +9,13 @@ const authOptions: AuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "client id not set",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "secret not set",
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
     }),
   ],
   secret: process.env.JWT_SECRET,

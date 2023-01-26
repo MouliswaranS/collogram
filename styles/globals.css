@@ -7,8 +7,35 @@
 
 .animatable:hover {
   transition: 0.3s;
-  background: rgb(255, 158, 158);
+  background: rgb(255, 33, 33);
   color: rgb(255, 255, 255);
   font-weight: 500;
-  transform: translate(5px);
+  transform: translate(2%);
+}
+
+.noblue {
+  transition: all;
+  background-color: aliceblue;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
