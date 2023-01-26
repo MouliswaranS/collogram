@@ -35,7 +35,7 @@ export default function LoginCard({ user }: { user: DefaultSession["user"] }) {
         onClick={() => {
           showBanner();
         }}
-        className=" px-5 py-2 bg-slate-100 rounded-lg "
+        className=" px-5 py-2 bg-slate-100 rounded-lg shadow-md "
       >
         profile
       </button>
